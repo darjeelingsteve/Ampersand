@@ -37,6 +37,11 @@ class FontProviderTests: XCTestCase {
         }
     }
 
+    /*
+     Only test scaled fonts on iOS as tvOS does not scale fonts according to the
+     content size category.
+     */
+    #if os(iOS)
     func testItVendsScaledFontsWhenTheTraitCollectionRequiresIt() {
         given("The font provider is configured with a custom font", closure: givenTheFontProviderIsConfiguredWithACustomFont)
         when("A body font is requested for the extra large type size") { _ in
@@ -55,6 +60,7 @@ class FontProviderTests: XCTestCase {
             XCTAssertLessThan(vendedFont.pointSize, 16)
         }
     }
+    #endif
 
     func testItFailsToInitialiseIfTheConfigurationFileIsInvalid() {
         given("The font provider is configured with an invalid config file", closure: givenTheFontProviderIsConfiguredWithAnInvalidConfigFile)
