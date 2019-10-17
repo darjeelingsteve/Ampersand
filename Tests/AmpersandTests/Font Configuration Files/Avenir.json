@@ -1,0 +1,97 @@
+{
+  "styles": [
+    {
+      "textStyle": "UICTFontTextStyleTitle0",
+      "fontName": "Avenir-Medium",
+      "pointSize": 30
+    },
+    {
+      "textStyle": "UICTFontTextStyleTitle1",
+      "fontName": "Avenir-Medium",
+      "pointSize": 25
+    },
+    {
+      "textStyle": "UICTFontTextStyleTitle2",
+      "fontName": "Avenir-Roman",
+      "pointSize": 20
+    },
+    {
+      "textStyle": "UICTFontTextStyleTitle3",
+      "fontName": "Avenir-Roman",
+      "pointSize": 18
+    },
+    {
+      "textStyle": "UICTFontTextStyleHeadline",
+      "fontName": "Avenir-Heavy",
+      "pointSize": 16
+    },
+    {
+      "textStyle": "UICTFontTextStyleSubhead",
+      "fontName": "Avenir-Roman",
+      "pointSize": 14
+    },
+    {
+      "textStyle": "UICTFontTextStyleBody",
+      "fontName": "Avenir-Roman",
+      "pointSize": 16
+    },
+    {
+      "textStyle": "UICTFontTextStyleCallout",
+      "fontName": "Avenir-Roman",
+      "pointSize": 15
+    },
+    {
+      "textStyle": "UICTFontTextStyleFootnote",
+      "fontName": "Avenir-Roman",
+      "pointSize": 13
+    },
+    {
+      "textStyle": "UICTFontTextStyleCaption1",
+      "fontName": "Avenir-Roman",
+      "pointSize": 12
+    },
+    {
+      "textStyle": "UICTFontTextStyleCaption2",
+      "fontName": "Avenir-Roman",
+      "pointSize": 11
+    }
+  ],
+  "weights": [
+    {
+      "fontWeight": "ultraLight",
+      "fontName": "Avenir-Light"
+    },
+    {
+      "fontWeight": "thin",
+      "fontName": "Avenir-Light"
+    },
+    {
+      "fontWeight": "light",
+      "fontName": "Avenir-Light"
+    },
+    {
+      "fontWeight": "regular",
+      "fontName": "Avenir-Roman"
+    },
+    {
+      "fontWeight": "medium",
+      "fontName": "Avenir-Medium"
+    },
+    {
+      "fontWeight": "semibold",
+      "fontName": "Avenir-Heavy"
+    },
+    {
+      "fontWeight": "bold",
+      "fontName": "Avenir-Heavy"
+    },
+    {
+      "fontWeight": "heavy",
+      "fontName": "Avenir-Heavy"
+    },
+    {
+      "fontWeight": "black",
+      "fontName": "Avenir-Black"
+    }
+  ]
+}
