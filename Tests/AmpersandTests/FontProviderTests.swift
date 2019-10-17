@@ -53,7 +53,7 @@ class FontProviderTests: XCTestCase {
         }
 
         when("A body font is requested for the small type size") { _ in
-            vendedFont = fontProvider.font(forTextStyle: .body, compatibleWith: UITraitCollection(preferredContentSizeCategory: UIContentSizeCategory.small))
+            vendedFont = fontProvider.font(forTextStyle: .body, compatibleWith: UITraitCollection(preferredContentSizeCategory: .small))
         }
         then("The font is scaled down") { _ in
             XCTAssertEqual(vendedFont.fontName, "Avenir-Roman")
