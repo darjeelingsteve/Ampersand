@@ -94,3 +94,8 @@ let nonScalingTitle = fontProvider.nonScalingFont(forTextStyle: .title1)
 let semibold = fontProvider.font(ofSize: 17, weight: .semibold)
 ```
 
+
+
+## Example Application with SPM Integration
+
+An example application showing how to integrate Ampersand and use its Application Font APIs can be found [here](https://github.com/darjeelingsteve/Ampersand-Example).
