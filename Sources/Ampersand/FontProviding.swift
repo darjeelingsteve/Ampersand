@@ -19,8 +19,7 @@ public protocol FontProviding {
     func font(forTextStyle style: UIFont.TextStyle, compatibleWith traitCollection: UITraitCollection?) -> UIFont
     
     /// - Parameter style: The text style that a font should be returned for.
-    /// - Returns: A non-scaling font matching the given text style,
-    /// compatible with the application's current trait environment.
+    /// - Returns: A non-scaling font matching the given text style.
     ///
     /// Non-scaling fonts ignore the user's Dynamic Type settings and use the
     /// default point size for the given text style.
@@ -32,4 +31,25 @@ public protocol FontProviding {
     /// available match.
     /// - Returns: A font matching the given parameters.
     func font(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> UIFont
+}
+
+public extension FontProviding {
+    /// - Parameter style: The text style that a font descriptor should be
+    /// returned for.
+    /// - Parameter traitCollection: The trait collection that the font
+    /// descriptor must be compatible with. If `nil`, the application's current
+    /// trait environment will be used.
+    func fontDescriptor(forTextStyle style: UIFont.TextStyle, compatibleWith traitCollection: UITraitCollection?) -> UIFontDescriptor {
+        return font(forTextStyle: style, compatibleWith: traitCollection).fontDescriptor
+    }
+    
+    /// - Parameter style: The text style that a font descriptor should be
+    /// returned for.
+    /// - Returns: A non-scaling font descriptor matching the given text style.
+    ///
+    /// Non-scaling fonts descriptors ignore the user's Dynamic Type settings
+    /// and use the default point size for the given text style.
+    func nonScalingFontDescriptor(forTextStyle style: UIFont.TextStyle) -> UIFontDescriptor {
+        return nonScalingFont(forTextStyle: style).fontDescriptor
+    }
 }

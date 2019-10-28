@@ -11,13 +11,34 @@ import XCTest
 class FontProviderTests: XCTestCase {
     private var fontProvider: FontProvider!
     private var vendedFont: UIFont!
+    private var vendedFontDescriptor: UIFontDescriptor!
 
     override func tearDown() {
         fontProvider = nil
         vendedFont = nil
+        vendedFontDescriptor = nil
         super.tearDown()
     }
 
+    private func givenTheFontProviderIsConfiguredWithACustomFont(_ activity: XCTActivity) {
+        let url = urlForConfigurationFile(withName: "Avenir")
+        fontProvider = FontProvider(configurationFileURL: url)
+    }
+
+    private func givenTheFontProviderIsConfiguredWithAnInvalidConfigFile(_ activity: XCTActivity) {
+        let url = urlForConfigurationFile(withName: "InvalidFontConfiguration")
+        fontProvider = FontProvider(configurationFileURL: url)
+    }
+    
+    private func urlForConfigurationFile(withName name: String) -> URL {
+        let sourceFileURL = URL(fileURLWithPath: #file)
+        let sourceFileDirectory = sourceFileURL.deletingLastPathComponent()
+        return sourceFileDirectory.appendingPathComponent("Font Configuration Files").appendingPathComponent(name + ".json")
+    }
+}
+
+// MARK: - UIFont
+extension FontProviderTests {
     func testItVendsTheFontsItIsConfiguredWith() {
         given("The font provider is configured with a custom font", closure: givenTheFontProviderIsConfiguredWithACustomFont)
         when("A body font is requested") { _ in
@@ -68,22 +89,53 @@ class FontProviderTests: XCTestCase {
             XCTAssertNil(fontProvider)
         }
     }
+}
 
-    private func givenTheFontProviderIsConfiguredWithACustomFont(_ activity: XCTActivity) {
-        let url = urlForConfigurationFile(withName: "Avenir")
-        fontProvider = FontProvider(configurationFileURL: url)
-    }
+// MARK: - UIFontDescriptor
+extension FontProviderTests {
+    func testItVendsTheFontDescriptorsItIsConfiguredWith() {
+        given("The font provider is configured with a custom font", closure: givenTheFontProviderIsConfiguredWithACustomFont)
+        when("A body font descriptor is requested") { _ in
+            vendedFontDescriptor = fontProvider.fontDescriptor(forTextStyle: .body, compatibleWith: .defaultContentSizeTraitCollection)
+        }
+        then("The font descriptor describes the custom font") { _ in
+            XCTAssertEqual(vendedFontDescriptor.postscriptName, "Avenir-Roman")
+            XCTAssertEqual(vendedFontDescriptor.pointSize, 16)
+        }
 
-    private func givenTheFontProviderIsConfiguredWithAnInvalidConfigFile(_ activity: XCTActivity) {
-        let url = urlForConfigurationFile(withName: "InvalidFontConfiguration")
-        fontProvider = FontProvider(configurationFileURL: url)
+        when("A headline font descriptor is requested") { _ in
+            vendedFontDescriptor = fontProvider.fontDescriptor(forTextStyle: .headline, compatibleWith: .defaultContentSizeTraitCollection)
+        }
+        then("The font descriptor describes the custom font") { _ in
+            XCTAssertEqual(vendedFontDescriptor.postscriptName, "Avenir-Heavy")
+            XCTAssertEqual(vendedFontDescriptor.pointSize, 16)
+        }
     }
     
-    private func urlForConfigurationFile(withName name: String) -> URL {
-        let sourceFileURL = URL(fileURLWithPath: #file)
-        let sourceFileDirectory = sourceFileURL.deletingLastPathComponent()
-        return sourceFileDirectory.appendingPathComponent("Font Configuration Files").appendingPathComponent(name + ".json")
+    /*
+     Only test scaled fonts on iOS as tvOS does not scale fonts according to the
+     content size category.
+     */
+    #if os(iOS)
+    func testItVendsScaledFontDescriptorsWhenTheTraitCollectionRequiresIt() {
+        given("The font provider is configured with a custom font", closure: givenTheFontProviderIsConfiguredWithACustomFont)
+        when("A body font descriptor is requested for the extra large type size") { _ in
+            vendedFontDescriptor = fontProvider.fontDescriptor(forTextStyle: .body, compatibleWith: UITraitCollection(preferredContentSizeCategory: .extraLarge))
+        }
+        then("The font descriptor describes a scaled up font") { _ in
+            XCTAssertEqual(vendedFontDescriptor.postscriptName, "Avenir-Roman")
+            XCTAssertGreaterThan(vendedFontDescriptor.pointSize, 16)
+        }
+
+        when("A body font descriptor is requested for the small type size") { _ in
+            vendedFontDescriptor = fontProvider.fontDescriptor(forTextStyle: .body, compatibleWith: UITraitCollection(preferredContentSizeCategory: .small))
+        }
+        then("The font descriptor describes a scaled down font") { _ in
+            XCTAssertEqual(vendedFontDescriptor.postscriptName, "Avenir-Roman")
+            XCTAssertLessThan(vendedFontDescriptor.pointSize, 16)
+        }
     }
+    #endif
 }
 
 // MARK: - Font Weights
