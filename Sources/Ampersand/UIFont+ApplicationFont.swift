@@ -10,7 +10,7 @@ import UIKit
 /// The font provider used to vend application fonts. This is configured
 /// publically via the
 /// `+[UIFont registerApplicationFontWithConfigurationAtURL:]` function.
-private var applicationFontProvider: FontProviding?
+var applicationFontProvider: FontProviding?
 
 public extension UIFont {
     /// Registers the application font with the configuration at the given URL.
