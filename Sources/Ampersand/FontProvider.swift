@@ -44,6 +44,17 @@ extension FontProvider: FontProviding {
         }
         return font
     }
+
+    public func font(forTextStyle style: UIFont.TextStyle, weight: UIFont.Weight, compatibleWith traitCollection: UITraitCollection? = nil) -> UIFont {
+        guard let fontDescription = fontData.weights.first(where: { $0.fontWeight == weight }),
+              let fontStyle = fontData.styles.first(where: { $0.textStyle == style }),
+              let font = UIFont(name: fontDescription.fontName, size: fontStyle.pointSize) else {
+            let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
+            return UIFont.systemFont(ofSize: descriptor.pointSize, weight: weight)
+        }
+        let metrics = UIFontMetrics(forTextStyle: style)
+        return metrics.scaledFont(for: font, compatibleWith: traitCollection)
+    }
 }
 
 extension FontProvider: CustomDebugStringConvertible {

@@ -31,6 +31,15 @@ public protocol FontProviding {
     /// available match.
     /// - Returns: A font matching the given parameters.
     func font(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> UIFont
+
+    /// - Parameters:
+    ///   - style: The style of the font to be returned
+    ///   - weight: The weight of the font to be returned, or the closest
+    ///   - traitCollection: The trait collection that the font must be
+    /// compatible with. If `nil`, the application's current trait environment
+    /// will be used.
+    /// - Returns: A font matching the given parameters.
+    func font(forTextStyle style: UIFont.TextStyle, weight: UIFont.Weight, compatibleWith traitCollection: UITraitCollection?) -> UIFont
 }
 
 public extension FontProviding {
