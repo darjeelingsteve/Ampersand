@@ -75,8 +75,22 @@ public extension UIFont {
             let metrics = UIFontMetrics(forTextStyle: style)
             let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
             let font = UIFont.systemFont(ofSize: descriptor.pointSize, weight: weight)
-            return metrics.scaledFont(for: font)
+            return metrics.scaledFont(for: font, compatibleWith: traitCollection)
         }
         return applicationFontProvider.font(forTextStyle: style, weight: weight, compatibleWith: traitCollection)
+    }
+
+    /// - Parameters:
+    ///   - style: The required text style
+    ///   - weight: The required text weight
+    /// - Returns: The application font (or system font if none registered) with the given style and weight.
+    class func nonScalingApplicationFont(forTextStyle style: TextStyle, weight: Weight) -> UIFont {
+        guard let applicationFontProvider = applicationFontProvider else {
+            let metrics = UIFontMetrics(forTextStyle: style)
+            let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
+            let font = UIFont.systemFont(ofSize: descriptor.pointSize, weight: weight)
+            return metrics.scaledFont(for: font)
+        }
+        return applicationFontProvider.nonScalingFont(forTextStyle: style, weight: weight)
     }
 }

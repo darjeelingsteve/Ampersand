@@ -40,6 +40,12 @@ public protocol FontProviding {
     /// will be used.
     /// - Returns: A font matching the given parameters.
     func font(forTextStyle style: UIFont.TextStyle, weight: UIFont.Weight, compatibleWith traitCollection: UITraitCollection?) -> UIFont
+
+    /// - Parameters:
+    ///   - style: The text style that a font should be returned for.
+    ///   - weight: The weight of the font to be returned, or the closest
+    /// - Returns: A non-scaling font matching the given text style and weight.
+    func nonScalingFont(forTextStyle style: UIFont.TextStyle, weight: UIFont.Weight) -> UIFont
 }
 
 public extension FontProviding {

@@ -55,6 +55,10 @@ extension FontProvider: FontProviding {
         let metrics = UIFontMetrics(forTextStyle: style)
         return metrics.scaledFont(for: font, compatibleWith: traitCollection)
     }
+
+    public func nonScalingFont(forTextStyle style: UIFont.TextStyle, weight: UIFont.Weight) -> UIFont {
+        return font(forTextStyle: style, weight: weight, compatibleWith: .defaultContentSizeTraitCollection)
+    }
 }
 
 extension FontProvider: CustomDebugStringConvertible {
