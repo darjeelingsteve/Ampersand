@@ -172,4 +172,80 @@ extension FontProviderTests {
         XCTAssertEqual(black.fontName, "Avenir-Black")
         XCTAssertEqual(black.pointSize, 18)
     }
+
+    func testItVendsTheExpectedFontsForGivenStyleAndWeightsAtGivenSizes() {
+        given("The font provider is configured with a custom font", closure: givenTheFontProviderIsConfiguredWithACustomFont)
+
+        let bodyRegular = fontProvider.font(forTextStyle: .body, weight: .regular, compatibleWith: .defaultContentSizeTraitCollection)
+        let bodyLight = fontProvider.font(forTextStyle: .body, weight: .light, compatibleWith: .defaultContentSizeTraitCollection)
+        let bodyMedium = fontProvider.font(forTextStyle: .body, weight: .medium, compatibleWith: .defaultContentSizeTraitCollection)
+        let bodyHeavy = fontProvider.font(forTextStyle: .body, weight: .heavy, compatibleWith: .defaultContentSizeTraitCollection)
+        let bodyBlack = fontProvider.font(forTextStyle: .body, weight: .black, compatibleWith: .defaultContentSizeTraitCollection)
+
+        let bodyRegularExtraLarge = fontProvider.font(forTextStyle: .body, weight: .regular, compatibleWith: UITraitCollection(preferredContentSizeCategory: .extraLarge))
+        let bodyLightExtraLarge = fontProvider.font(forTextStyle: .body, weight: .light, compatibleWith: UITraitCollection(preferredContentSizeCategory: .extraLarge))
+        let bodyMediumExtraLarge = fontProvider.font(forTextStyle: .body, weight: .medium, compatibleWith: UITraitCollection(preferredContentSizeCategory: .extraLarge))
+        let bodyHeavyExtraLarge = fontProvider.font(forTextStyle: .body, weight: .heavy, compatibleWith: UITraitCollection(preferredContentSizeCategory: .extraLarge))
+        let bodyBlackExtraLarge = fontProvider.font(forTextStyle: .body, weight: .black, compatibleWith: UITraitCollection(preferredContentSizeCategory: .extraLarge))
+
+        let bodyRegularSmall = fontProvider.font(forTextStyle: .body, weight: .regular, compatibleWith: UITraitCollection(preferredContentSizeCategory: .small))
+        let bodyLightSmall = fontProvider.font(forTextStyle: .body, weight: .light, compatibleWith: UITraitCollection(preferredContentSizeCategory: .small))
+        let bodyMediumSmall = fontProvider.font(forTextStyle: .body, weight: .medium, compatibleWith: UITraitCollection(preferredContentSizeCategory: .small))
+        let bodyHeavySmall = fontProvider.font(forTextStyle: .body, weight: .heavy, compatibleWith: UITraitCollection(preferredContentSizeCategory: .small))
+        let bodyBlackSmall = fontProvider.font(forTextStyle: .body, weight: .black, compatibleWith: UITraitCollection(preferredContentSizeCategory: .small))
+
+        XCTAssertEqual(bodyRegular.fontName, "Avenir-Roman")
+        XCTAssertEqual(bodyRegular.pointSize, 16)
+        XCTAssertEqual(bodyLight.fontName, "Avenir-Light")
+        XCTAssertEqual(bodyLight.pointSize, 16)
+        XCTAssertEqual(bodyMedium.fontName, "Avenir-Medium")
+        XCTAssertEqual(bodyMedium.pointSize, 16)
+        XCTAssertEqual(bodyHeavy.fontName, "Avenir-Heavy")
+        XCTAssertEqual(bodyHeavy.pointSize, 16)
+        XCTAssertEqual(bodyBlack.fontName, "Avenir-Black")
+        XCTAssertEqual(bodyBlack.pointSize, 16)
+
+        XCTAssertEqual(bodyRegularExtraLarge.fontName, "Avenir-Roman")
+        XCTAssertEqual(bodyRegularExtraLarge.pointSize, 17)
+        XCTAssertEqual(bodyLightExtraLarge.fontName, "Avenir-Light")
+        XCTAssertEqual(bodyLightExtraLarge.pointSize, 17)
+        XCTAssertEqual(bodyMediumExtraLarge.fontName, "Avenir-Medium")
+        XCTAssertEqual(bodyMediumExtraLarge.pointSize, 17)
+        XCTAssertEqual(bodyHeavyExtraLarge.fontName, "Avenir-Heavy")
+        XCTAssertEqual(bodyHeavyExtraLarge.pointSize, 17)
+        XCTAssertEqual(bodyBlackExtraLarge.fontName, "Avenir-Black")
+        XCTAssertEqual(bodyBlackExtraLarge.pointSize, 17)
+
+        XCTAssertEqual(bodyRegularSmall.fontName, "Avenir-Roman")
+        XCTAssertEqual(bodyRegularSmall.pointSize, 15)
+        XCTAssertEqual(bodyLightSmall.fontName, "Avenir-Light")
+        XCTAssertEqual(bodyLightSmall.pointSize, 15)
+        XCTAssertEqual(bodyMediumSmall.fontName, "Avenir-Medium")
+        XCTAssertEqual(bodyMediumSmall.pointSize, 15)
+        XCTAssertEqual(bodyHeavySmall.fontName, "Avenir-Heavy")
+        XCTAssertEqual(bodyHeavySmall.pointSize, 15)
+        XCTAssertEqual(bodyBlackSmall.fontName, "Avenir-Black")
+        XCTAssertEqual(bodyBlackSmall.pointSize, 15)
+    }
+
+    func testItVendsTheExpectedNonScalingFontsForGivenStyleAndWeights() {
+        given("The font provider is configured with a custom font", closure: givenTheFontProviderIsConfiguredWithACustomFont)
+
+        let bodyRegular = fontProvider.nonScalingFont(forTextStyle: .body, weight: .regular)
+        let bodyLight = fontProvider.nonScalingFont(forTextStyle: .body, weight: .light)
+        let bodyMedium = fontProvider.nonScalingFont(forTextStyle: .body, weight: .medium)
+        let bodyHeavy = fontProvider.nonScalingFont(forTextStyle: .body, weight: .heavy)
+        let bodyBlack = fontProvider.nonScalingFont(forTextStyle: .body, weight: .black)
+
+        XCTAssertEqual(bodyRegular.fontName, "Avenir-Roman")
+        XCTAssertEqual(bodyRegular.pointSize, 16)
+        XCTAssertEqual(bodyLight.fontName, "Avenir-Light")
+        XCTAssertEqual(bodyLight.pointSize, 16)
+        XCTAssertEqual(bodyMedium.fontName, "Avenir-Medium")
+        XCTAssertEqual(bodyMedium.pointSize, 16)
+        XCTAssertEqual(bodyHeavy.fontName, "Avenir-Heavy")
+        XCTAssertEqual(bodyHeavy.pointSize, 16)
+        XCTAssertEqual(bodyBlack.fontName, "Avenir-Black")
+        XCTAssertEqual(bodyBlack.pointSize, 16)
+    }
 }
