@@ -173,6 +173,7 @@ extension FontProviderTests {
         XCTAssertEqual(black.pointSize, 18)
     }
 
+    #if os(iOS)
     func testItVendsTheExpectedFontsForGivenStyleAndWeightsAtGivenSizes() {
         given("The font provider is configured with a custom font", closure: givenTheFontProviderIsConfiguredWithACustomFont)
 
@@ -227,6 +228,7 @@ extension FontProviderTests {
         XCTAssertEqual(bodyBlackSmall.fontName, "Avenir-Black")
         XCTAssertEqual(bodyBlackSmall.pointSize, 15)
     }
+    #endif
 
     func testItVendsTheExpectedNonScalingFontsForGivenStyleAndWeights() {
         given("The font provider is configured with a custom font", closure: givenTheFontProviderIsConfiguredWithACustomFont)
