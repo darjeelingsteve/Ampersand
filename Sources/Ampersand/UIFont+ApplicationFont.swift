@@ -23,6 +23,11 @@ public extension UIFont {
         }
     }
     
+    /// Unregisters the currently registered application font.
+    class func unregisterApplicationFont() {
+        applicationFontProvider = nil
+    }
+    
     /// - Parameters:
     ///   - style: The text style that a font should be returned for.
     ///   - traitCollection: The trait collection that the font must be
