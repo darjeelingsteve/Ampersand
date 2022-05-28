@@ -31,9 +31,7 @@ final class UIFont_ApplicationFontTests: XCTestCase {
     }
     
     private func givenTheAvenirFontIsRegisteredAsTheApplicationFont() {
-        let sourceFileURL = URL(fileURLWithPath: #file)
-        let sourceFileDirectory = sourceFileURL.deletingLastPathComponent()
-        let avenirConfigurationURL = sourceFileDirectory.appendingPathComponent("Font Configuration Files").appendingPathComponent("Avenir").appendingPathExtension("json")
+        let avenirConfigurationURL = URL.urlForConfigurationFile(withName: "Avenir")
         UIFont.registerApplicationFont(withConfigurationAt: avenirConfigurationURL)
     }
     

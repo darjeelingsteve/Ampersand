@@ -21,20 +21,15 @@ class FontProviderTests: XCTestCase {
     }
 
     private func givenTheFontProviderIsConfiguredWithACustomFont(_ activity: XCTActivity) {
-        let url = urlForConfigurationFile(withName: "Avenir")
+        let url = URL.urlForConfigurationFile(withName: "Avenir")
         fontProvider = FontProvider(configurationFileURL: url)
     }
 
     private func givenTheFontProviderIsConfiguredWithAnInvalidConfigFile(_ activity: XCTActivity) {
-        let url = urlForConfigurationFile(withName: "InvalidFontConfiguration")
+        let url = URL.urlForConfigurationFile(withName: "InvalidFontConfiguration")
         fontProvider = FontProvider(configurationFileURL: url)
     }
-    
-    private func urlForConfigurationFile(withName name: String) -> URL {
-        let sourceFileURL = URL(fileURLWithPath: #file)
-        let sourceFileDirectory = sourceFileURL.deletingLastPathComponent()
-        return sourceFileDirectory.appendingPathComponent("Font Configuration Files").appendingPathComponent(name).appendingPathExtension("json")
-    }
+
 }
 
 // MARK: - UIFont
