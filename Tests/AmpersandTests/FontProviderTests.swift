@@ -33,7 +33,7 @@ class FontProviderTests: XCTestCase {
     private func urlForConfigurationFile(withName name: String) -> URL {
         let sourceFileURL = URL(fileURLWithPath: #file)
         let sourceFileDirectory = sourceFileURL.deletingLastPathComponent()
-        return sourceFileDirectory.appendingPathComponent("Font Configuration Files").appendingPathComponent(name + ".json")
+        return sourceFileDirectory.appendingPathComponent("Font Configuration Files").appendingPathComponent(name).appendingPathExtension("json")
     }
 }
 
