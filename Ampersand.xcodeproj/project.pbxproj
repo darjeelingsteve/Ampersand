@@ -43,7 +43,7 @@
 		OBJ_20 /* URL+FontConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+FontConfiguration.swift"; sourceTree = "<group>"; };
 		OBJ_21 /* XCTestCase+Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Steps.swift"; sourceTree = "<group>"; };
 		OBJ_9 /* FontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
-		"ampersand::Ampersand::Product" /* Ampersand.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ampersand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"ampersand::Ampersand::Product" /* Ampersand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Ampersand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"ampersand::AmpersandTests::Product" /* AmpersandTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmpersandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,14 +95,13 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_7 /* Sources */,
 				OBJ_16 /* Tests */,
 				OBJ_22 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -180,7 +179,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_22 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,6 +270,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -301,6 +301,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
