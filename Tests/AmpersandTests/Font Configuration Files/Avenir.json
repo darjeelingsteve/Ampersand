@@ -1,6 +1,16 @@
 {
   "styles": [
     {
+      "textStyle": "UICTFontTextStyleExtraLargeTitle",
+      "fontName": "Avenir-Heavy",
+      "pointSize": 34
+    },
+    {
+      "textStyle": "UICTFontTextStyleExtraLargeTitle2",
+      "fontName": "Avenir-Heavy",
+      "pointSize": 26
+    },
+    {
       "textStyle": "UICTFontTextStyleTitle0",
       "fontName": "Avenir-Medium",
       "pointSize": 30
