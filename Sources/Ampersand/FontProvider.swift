@@ -67,7 +67,7 @@ extension FontProvider: CustomDebugStringConvertible {
     }
 }
 
-extension UIFont.TextStyle: Decodable {}
+extension UIFont.TextStyle: @retroactive Decodable {}
 
 private struct FontData: Decodable {
     let styles: [Style]
