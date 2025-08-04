@@ -32,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48EFB75F2E40AF5A00438A56 /* Avenir.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Avenir.json; sourceTree = "<group>"; };
+		48EFB7602E40AF5A00438A56 /* InvalidFontConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidFontConfiguration.json; sourceTree = "<group>"; };
 		OBJ_10 /* FontProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProviding.swift; sourceTree = "<group>"; };
 		OBJ_11 /* UIFont+ApplicationFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+ApplicationFont.swift"; sourceTree = "<group>"; };
 		OBJ_12 /* UIFont+NonScaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+NonScaling.swift"; sourceTree = "<group>"; };
@@ -66,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48EFB7612E40AF5A00438A56 /* Font Configuration Files */ = {
+			isa = PBXGroup;
+			children = (
+				48EFB75F2E40AF5A00438A56 /* Avenir.json */,
+				48EFB7602E40AF5A00438A56 /* InvalidFontConfiguration.json */,
+			);
+			path = "Font Configuration Files";
+			sourceTree = "<group>";
+		};
 		OBJ_16 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +88,7 @@
 		OBJ_17 /* AmpersandTests */ = {
 			isa = PBXGroup;
 			children = (
+				48EFB7612E40AF5A00438A56 /* Font Configuration Files */,
 				OBJ_18 /* FontProviderTests.swift */,
 				OBJ_19 /* UIFont_ApplicationFontTests.swift */,
 				OBJ_20 /* URL+FontConfiguration.swift */,
@@ -281,7 +293,7 @@
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = Ampersand;
 				TVOS_DEPLOYMENT_TARGET = 15.0;
@@ -315,7 +327,7 @@
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = Ampersand;
 				TVOS_DEPLOYMENT_TARGET = 15.0;
@@ -370,7 +382,7 @@
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = AmpersandTests;
 				TVOS_DEPLOYMENT_TARGET = 15.0;
@@ -400,7 +412,7 @@
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = AmpersandTests;
 				TVOS_DEPLOYMENT_TARGET = 15.0;

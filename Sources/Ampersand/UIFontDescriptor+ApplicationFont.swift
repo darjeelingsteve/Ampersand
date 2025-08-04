@@ -15,7 +15,7 @@ public extension UIFontDescriptor {
     /// will be used.
     /// - Returns: The application font for the given parameters if one has been
     /// registered, otherwise returns the system font.
-    class func applicationFontDescriptor(forTextStyle style: UIFont.TextStyle, compatibleWith traitCollection: UITraitCollection? = nil) -> UIFontDescriptor {
+    @MainActor class func applicationFontDescriptor(forTextStyle style: UIFont.TextStyle, compatibleWith traitCollection: UITraitCollection? = nil) -> UIFontDescriptor {
         guard let applicationFontProvider = applicationFontProvider else {
             return preferredFontDescriptor(withTextStyle: style, compatibleWith: traitCollection)
         }
@@ -28,7 +28,7 @@ public extension UIFontDescriptor {
     /// does not have a modified type size set.
     /// - Returns: The application font for the given parameters if one has been
     /// registered, otherwise returns the system font.
-    class func nonScalingApplicationFontDescriptor(forTextStyle style: UIFont.TextStyle) -> UIFontDescriptor {
+    @MainActor class func nonScalingApplicationFontDescriptor(forTextStyle style: UIFont.TextStyle) -> UIFontDescriptor {
         guard let applicationFontProvider = applicationFontProvider else {
             return nonScalingPreferredFontDescriptor(forTextStyle: style)
         }
