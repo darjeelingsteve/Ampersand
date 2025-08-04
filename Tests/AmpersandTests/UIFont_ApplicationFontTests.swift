@@ -8,13 +8,12 @@
 import XCTest
 @testable import Ampersand
 
-final class UIFont_ApplicationFontTests: XCTestCase {
+@MainActor final class UIFont_ApplicationFontTests: XCTestCase {
     private var vendedFont: UIFont!
     
-    override func tearDown() {
+    override func tearDown() async throws {
         UIFont.unregisterApplicationFont()
         vendedFont = nil
-        super.tearDown()
     }
     
     func testItVendsTheRegisteredApplicationFont() {

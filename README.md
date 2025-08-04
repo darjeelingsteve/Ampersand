@@ -2,7 +2,7 @@
 
 
 
-# [![GitHub license](https://img.shields.io/github/license/darjeelingsteve/Ampersand)](https://raw.githubusercontent.com/Carthage/Carthage/master/LICENSE.md) [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![Platform](https://img.shields.io/badge/platforms-iOS%2011.0%20%7C%20tvOS%2011.0-F28D00.svg)
+# [![GitHub license](https://img.shields.io/github/license/darjeelingsteve/Ampersand)](https://raw.githubusercontent.com/Carthage/Carthage/master/LICENSE.md) ![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-red) [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://swift.org/) ![Platform](https://img.shields.io/badge/platforms-iOS%2015.0%20%7C%20tvOS%2015.0-F28D00.svg)
 
 Ampersand is a small library that allows custom typefaces to be used seamlessly with the [text styles API](https://developer.apple.com/documentation/uikit/uifont/textstyle) used by `UIFont` and `UIFontDescriptor`. This makes it simple to integrate a custom typeface in to your app whilst utilising the easy styling provided by the text style API.
 

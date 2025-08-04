@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48EFB7632E40B26E00438A56 /* Avenir.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EFB75F2E40AF5A00438A56 /* Avenir.json */; };
+		48EFB7642E40B26E00438A56 /* InvalidFontConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EFB7602E40AF5A00438A56 /* InvalidFontConfiguration.json */; };
 		OBJ_33 /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* FontProvider.swift */; };
 		OBJ_34 /* FontProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* FontProviding.swift */; };
 		OBJ_35 /* UIFont+ApplicationFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* UIFont+ApplicationFont.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48EFB75F2E40AF5A00438A56 /* Avenir.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Avenir.json; sourceTree = "<group>"; };
+		48EFB7602E40AF5A00438A56 /* InvalidFontConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidFontConfiguration.json; sourceTree = "<group>"; };
 		OBJ_10 /* FontProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProviding.swift; sourceTree = "<group>"; };
 		OBJ_11 /* UIFont+ApplicationFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+ApplicationFont.swift"; sourceTree = "<group>"; };
 		OBJ_12 /* UIFont+NonScaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+NonScaling.swift"; sourceTree = "<group>"; };
@@ -44,7 +48,7 @@
 		OBJ_21 /* XCTestCase+Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Steps.swift"; sourceTree = "<group>"; };
 		OBJ_9 /* FontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
 		"ampersand::Ampersand::Product" /* Ampersand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Ampersand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"ampersand::AmpersandTests::Product" /* AmpersandTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmpersandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"ampersand::AmpersandTests::Product" /* AmpersandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = AmpersandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48EFB7612E40AF5A00438A56 /* Font Configuration Files */ = {
+			isa = PBXGroup;
+			children = (
+				48EFB75F2E40AF5A00438A56 /* Avenir.json */,
+				48EFB7602E40AF5A00438A56 /* InvalidFontConfiguration.json */,
+			);
+			path = "Font Configuration Files";
+			sourceTree = "<group>";
+		};
 		OBJ_16 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +90,7 @@
 		OBJ_17 /* AmpersandTests */ = {
 			isa = PBXGroup;
 			children = (
+				48EFB7612E40AF5A00438A56 /* Font Configuration Files */,
 				OBJ_18 /* FontProviderTests.swift */,
 				OBJ_19 /* UIFont_ApplicationFontTests.swift */,
 				OBJ_20 /* URL+FontConfiguration.swift */,
@@ -150,6 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_53 /* Build configuration list for PBXNativeTarget "AmpersandTests" */;
 			buildPhases = (
+				48EFB7622E40B26500438A56 /* Resources */,
 				OBJ_56 /* Sources */,
 				OBJ_61 /* Frameworks */,
 			);
@@ -189,6 +204,18 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48EFB7622E40B26500438A56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EFB7632E40B26E00438A56 /* Avenir.json in Resources */,
+				48EFB7642E40B26E00438A56 /* InvalidFontConfiguration.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		OBJ_32 /* Sources */ = {
@@ -267,10 +294,10 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Ampersand.xcodeproj/Ampersand_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -278,11 +305,13 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = Ampersand;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -299,10 +328,10 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Ampersand.xcodeproj/Ampersand_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -310,11 +339,13 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = Ampersand;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
@@ -355,18 +386,22 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Ampersand.xcodeproj/AmpersandTests_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = AmpersandTests;
-				TVOS_DEPLOYMENT_TARGET = 14.0;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
@@ -382,18 +417,22 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Ampersand.xcodeproj/AmpersandTests_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = AmpersandTests;
-				TVOS_DEPLOYMENT_TARGET = 14.0;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;

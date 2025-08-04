@@ -8,16 +8,15 @@
 import XCTest
 @testable import Ampersand
 
-class FontProviderTests: XCTestCase {
+@MainActor final class FontProviderTests: XCTestCase {
     private var fontProvider: FontProvider!
     private var vendedFont: UIFont!
     private var vendedFontDescriptor: UIFontDescriptor!
-
-    override func tearDown() {
+    
+    override func tearDown() async throws {
         fontProvider = nil
         vendedFont = nil
         vendedFontDescriptor = nil
-        super.tearDown()
     }
 
     private func givenTheFontProviderIsConfiguredWithACustomFont(_ activity: XCTActivity) {
