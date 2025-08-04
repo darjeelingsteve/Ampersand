@@ -12,7 +12,7 @@ extension URL {
 #if SWIFT_PACKAGE
         Bundle.module.resourceURL!.appendingPathComponent("Font Configuration Files").appendingPathComponent(name).appendingPathExtension("json")
 #else
-        return Bundle(for: FontProviderTests.self).url(forResource: name, withExtension: "json")
+        return Bundle(for: FontProviderTests.self).url(forResource: name, withExtension: "json")!
 #endif
     }
 }

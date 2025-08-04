@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48EFB7632E40B26E00438A56 /* Avenir.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EFB75F2E40AF5A00438A56 /* Avenir.json */; };
+		48EFB7642E40B26E00438A56 /* InvalidFontConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EFB7602E40AF5A00438A56 /* InvalidFontConfiguration.json */; };
 		OBJ_33 /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* FontProvider.swift */; };
 		OBJ_34 /* FontProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* FontProviding.swift */; };
 		OBJ_35 /* UIFont+ApplicationFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* UIFont+ApplicationFont.swift */; };
@@ -162,6 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_53 /* Build configuration list for PBXNativeTarget "AmpersandTests" */;
 			buildPhases = (
+				48EFB7622E40B26500438A56 /* Resources */,
 				OBJ_56 /* Sources */,
 				OBJ_61 /* Frameworks */,
 			);
@@ -201,6 +204,18 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48EFB7622E40B26500438A56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EFB7632E40B26E00438A56 /* Avenir.json in Resources */,
+				48EFB7642E40B26E00438A56 /* InvalidFontConfiguration.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		OBJ_32 /* Sources */ = {
@@ -371,6 +386,7 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Ampersand.xcodeproj/AmpersandTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -381,7 +397,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = AmpersandTests;
@@ -401,6 +417,7 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Ampersand.xcodeproj/AmpersandTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -411,7 +428,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = AmpersandTests;
